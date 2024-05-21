@@ -27,7 +27,23 @@
       "favicon": "./assets/images/favicon.png"
     },
     "plugins": [
-      "expo-router"
+      "expo-router",
+      [
+        "expo-font",
+        {
+          "fonts": [
+            "node_modules/@expo-google-fonts/outfit/Outfit_100Thin.ttf",
+            "node_modules/@expo-google-fonts/outfit/Outfit_200ExtraLight.ttf",
+            "node_modules/@expo-google-fonts/outfit/Outfit_300Light.ttf",
+            "node_modules/@expo-google-fonts/outfit/Outfit_400Regular.ttf",
+            "node_modules/@expo-google-fonts/outfit/Outfit_500Medium.ttf",
+            "node_modules/@expo-google-fonts/outfit/Outfit_600SemiBold.ttf",
+            "node_modules/@expo-google-fonts/outfit/Outfit_700Bold.ttf",
+            "node_modules/@expo-google-fonts/outfit/Outfit_800ExtraBold.ttf",
+            "node_modules/@expo-google-fonts/outfit/Outfit_900Black.ttf"
+          ]
+        }
+      ]
     ],
     "experiments": {
       "typedRoutes": true
