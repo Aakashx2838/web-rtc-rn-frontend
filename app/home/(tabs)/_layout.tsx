@@ -8,7 +8,6 @@ export default function AppLayout() {
   return (
     <View style={{ flex: 1, backgroundColor: Colors.light.text() }}>
       <Tabs
-        tabBar={() => <Fragment />}
         screenOptions={{
           headerShown: false,
           tabBarLabelStyle: {
@@ -125,12 +124,6 @@ export default function AppLayout() {
                 }
               />
             ),
-          }}
-        />
-        <Tabs.Screen
-          name="(conversations)/conversation/[conversationID]/index"
-          options={{
-            href: null,
           }}
         />
       </Tabs>

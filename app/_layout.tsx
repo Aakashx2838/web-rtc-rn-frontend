@@ -6,7 +6,7 @@ import {
   ThemeProvider,
 } from "@react-navigation/native";
 import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
-import { SafeAreaView } from "react-native";
+import { SafeAreaView, StatusBar } from "react-native";
 import { useFonts } from "expo-font";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 
@@ -62,6 +62,7 @@ export default function RootLayout() {
         <ThemeProvider
           value={colorScheme === "dark" ? DarkTheme : DefaultTheme}
         >
+          <StatusBar translucent barStyle={"light-content"} />
           <SafeAreaView style={{ flex: 1 }}>
             <Slot />
           </SafeAreaView>

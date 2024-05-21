@@ -11,7 +11,7 @@ export default function ConversationsSection() {
   const router = useRouter();
 
   const handleConversationSelect = () => {
-    router.push("/home/conversation/1");
+    router.push("/conversation/1");
   };
 
   return (
