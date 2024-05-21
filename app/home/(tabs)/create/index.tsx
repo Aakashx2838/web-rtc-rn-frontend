@@ -1,9 +1,9 @@
 import { Text, View } from "react-native";
 
-export default function Calls() {
+export default function Create() {
   return (
     <View>
-      <Text>Calls</Text>
+      <Text>Create</Text>
     </View>
   );
 }
