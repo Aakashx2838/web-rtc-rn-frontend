@@ -10,7 +10,7 @@ type TProps = {
   label?: string;
   icon?: ComponentProps<typeof MaterialIcons>["name"];
   reversed?: boolean;
-  size?: "sm";
+  size?: "sm" | "md" | "lg";
   variant?:
     | "light"
     | "outline"
@@ -21,6 +21,7 @@ type TProps = {
     | "link";
   path?: string;
   plain?: boolean;
+  floating?: boolean;
   action?: (e: GestureResponderEvent) => void;
 };
 
@@ -33,6 +34,7 @@ export default function Button({
   action,
   plain,
   size,
+  floating,
 }: TProps) {
   const { navigate } = useRouter();
 
@@ -83,6 +85,17 @@ export default function Button({
           height: 36,
           width: 36,
           backgroundColor: Colors.light.primary(),
+        }),
+        ...(floating && {
+          position: "absolute",
+          bottom: 16,
+          right: 16,
+          borderRadius: 100,
+          zIndex: 100,
+        }),
+        ...(size === "md" && {
+          height: 51,
+          width: 51,
         }),
       }}
     >

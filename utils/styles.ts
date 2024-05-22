@@ -10,23 +10,43 @@ export const TextStyles = StyleSheet.create({
   },
   h2: {
     fontSize: 32,
-    fontWeight: "bold",
     color: Colors.light.text(),
+    fontFamily: "Outfit_600SemiBold",
+  },
+  h2_dark: {
+    fontSize: 32,
+    color: Colors.light.background(),
+    fontFamily: "Outfit_600SemiBold",
   },
   h3: {
     fontSize: 24,
     color: Colors.light.text(),
     fontFamily: "Outfit_600SemiBold",
   },
+  h3_dark: {
+    fontSize: 24,
+    color: Colors.light.background(),
+    fontFamily: "Outfit_600SemiBold",
+  },
   h4: {
-    fontSize: 14,
+    fontSize: 20,
     color: Colors.light.text(),
     fontFamily: "Outfit_600SemiBold",
   },
+  h4_dark: {
+    fontSize: 20,
+    color: Colors.light.background(),
+    fontFamily: "Outfit_600SemiBold",
+  },
   h5: {
-    fontSize: 12,
-    fontWeight: "bold",
+    fontSize: 18,
+    fontFamily: "Outfit_600SemiBold",
     color: Colors.light.text(),
+  },
+  h5_dark: {
+    fontSize: 18,
+    fontFamily: "Outfit_600SemiBold",
+    color: Colors.light.background(),
   },
   body: {
     fontSize: 18,

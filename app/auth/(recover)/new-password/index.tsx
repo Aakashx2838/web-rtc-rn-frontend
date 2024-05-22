@@ -1,75 +1,52 @@
+import { ASSETS } from "@/assets";
+import Button from "@/components/Button";
+import Input from "@/components/inputs/input";
+import { Colors } from "@/constants/Colors";
+import { TextStyles } from "@/utils/styles";
 import { LinearGradient } from "expo-linear-gradient";
 import { Image, StyleSheet, Text, View } from "react-native";
 
-import Button from "@/components/Button";
-import Input from "@/components/inputs/input";
-
-import { Colors } from "@/constants/Colors";
-import { ASSETS } from "@/assets";
-import { TextStyles } from "@/utils/styles";
-
-export default function Login() {
+export default function NewPassword() {
   return (
     <View style={styles.main}>
       <LinearGradient
         colors={[Colors.light.primary(20), "transparent"]}
         style={styles.background}
       />
+
       <View style={styles.brand_container}>
         <Image source={ASSETS.LOGO} style={styles.logo} />
         <Text style={TextStyles.h1}>Ito</Text>
       </View>
       <View style={styles.form}>
         <Input
-          name="Email"
-          autoComplete="email"
-          textContentType="emailAddress"
+          name="Password"
+          autoComplete="new-password"
+          textContentType="newPassword"
+          secureTextEntry
+          required
         />
         <Input
-          name="Password"
-          autoComplete="password"
-          textContentType="password"
+          name="Confirm Password"
+          autoComplete="new-password"
+          textContentType="newPassword"
           secureTextEntry
+          required
         />
-        <View style={styles.actions_view}>
-          <Button
-            label="Sign up?"
-            variant="link"
-            path="/auth/register"
-            plain
-            size="sm"
-          />
-          <Text style={styles.bar}> | </Text>
-          <Button
-            label="Forgot password?"
-            variant="link"
-            plain
-            size="sm"
-            path="/auth/forgot-password"
-          />
-        </View>
       </View>
-      <Button label="Login" path="/home" />
+      <Button label="Confirm" path="/home" />
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  bar: {
-    color: Colors.light.text(50),
-  },
-  actions_view: {
-    flexDirection: "row",
-    alignItems: "center",
-    gap: 8,
-  },
   main: {
     flex: 1,
     position: "relative",
     flexDirection: "column",
     paddingVertical: 100,
     backgroundColor: Colors.light.background(),
-    gap: 36,
+    gap: 64,
     padding: 20,
   },
   brand_container: {

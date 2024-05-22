@@ -69,10 +69,13 @@ export default function AppLayout() {
           name="create/index"
           options={{
             href: "/home/(tabs)/create",
-            tabBarIcon: () => (
+            tabBarIcon: ({ focused }) => (
               <View
                 style={{
-                  backgroundColor: Colors.light.primary(),
+                  backgroundColor: focused
+                    ? "transparent"
+                    : Colors.light.primary(),
+                  bottom: focused ? 0 : 32,
                   aspectRatio: 1,
                   borderRadius: Number.MAX_SAFE_INTEGER,
                   height: 64,
@@ -80,11 +83,10 @@ export default function AppLayout() {
                   justifyContent: "center",
                 }}
               >
-                <Feather name="plus" size={28} />
+                <Feather name="plus" size={29} />
               </View>
             ),
             tabBarItemStyle: {
-              bottom: 32,
               justifyContent: "center",
               alignItems: "center",
             },

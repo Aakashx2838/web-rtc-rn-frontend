@@ -1,75 +1,44 @@
+import { ASSETS } from "@/assets";
+import Button from "@/components/Button";
+import Input from "@/components/inputs/input";
+import OTPInput from "@/components/inputs/otp-input";
+import { Colors } from "@/constants/Colors";
+import { TextStyles } from "@/utils/styles";
 import { LinearGradient } from "expo-linear-gradient";
 import { Image, StyleSheet, Text, View } from "react-native";
 
-import Button from "@/components/Button";
-import Input from "@/components/inputs/input";
+export default function VerifyOTP() {
+  const handleInitiateRecovery = () => {};
 
-import { Colors } from "@/constants/Colors";
-import { ASSETS } from "@/assets";
-import { TextStyles } from "@/utils/styles";
-
-export default function Login() {
   return (
     <View style={styles.main}>
       <LinearGradient
         colors={[Colors.light.primary(20), "transparent"]}
         style={styles.background}
       />
+
       <View style={styles.brand_container}>
         <Image source={ASSETS.LOGO} style={styles.logo} />
         <Text style={TextStyles.h1}>Ito</Text>
       </View>
       <View style={styles.form}>
-        <Input
-          name="Email"
-          autoComplete="email"
-          textContentType="emailAddress"
-        />
-        <Input
-          name="Password"
-          autoComplete="password"
-          textContentType="password"
-          secureTextEntry
-        />
-        <View style={styles.actions_view}>
-          <Button
-            label="Sign up?"
-            variant="link"
-            path="/auth/register"
-            plain
-            size="sm"
-          />
-          <Text style={styles.bar}> | </Text>
-          <Button
-            label="Forgot password?"
-            variant="link"
-            plain
-            size="sm"
-            path="/auth/forgot-password"
-          />
+        <OTPInput />
+        <View>
+          <Button label="Verify OTP" path="/auth/new-password" />
         </View>
       </View>
-      <Button label="Login" path="/home" />
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  bar: {
-    color: Colors.light.text(50),
-  },
-  actions_view: {
-    flexDirection: "row",
-    alignItems: "center",
-    gap: 8,
-  },
   main: {
     flex: 1,
     position: "relative",
     flexDirection: "column",
     paddingVertical: 100,
     backgroundColor: Colors.light.background(),
-    gap: 36,
+    gap: 64,
     padding: 20,
   },
   brand_container: {
@@ -91,6 +60,6 @@ const styles = StyleSheet.create({
     bottom: 0,
   },
   form: {
-    gap: 20,
+    gap: 64,
   },
 });
